@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div class="main" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+
+        <div class="marketing">
+          <div class="app-meta">
+            {% if site.enable.app_icon %}
+            <img class="app-icon" style="min-width: 92px;" height="auto" {% if site.app.icon %} src="{{ site.app.icon }}" {% endif %} /> 
+            {% endif %}
+            <span class="app-name">{{ site.app.name }}</span>
+          </div>
+
+          {% if site.marketing_header %}
+          <h2 class="marketing-header">{{ site.marketing_header }}</h2>
+          {% endif %}
+
+          <p class="marketing-desc">{{ site.marketing_desc }}</p>
+          <div class="download-buttons">
+            <a class="download-btn btn btn-lg" href="{{ site.link.url_1 }}">
+              <i class="fa fa-play" aria-hidden="true"></i> Watch
+            </a>
+
+            {% if site.link.url_2 %}
+            <a class="download-btn btn btn-lg" href="{{ site.link.url_2 }}">
+              <i class="fa fa-download" aria-hidden="true"></i> Download
+            </a>
+            {% endif %}
+          </div>
+		  
+		  <h2>PDF File List</h2>
+<ul>
+    {% for file in site.static_files %}
+        {% if file.path contains '/upload/' %}
+            <li>
+                <a href="{{ site.baseurl }}{{ file.path }}">{{ file.name }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+		  <p class="marketing-desc">{{ site.articlefull | markdownify }}</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="device {{ site.device }}">
+          <img class="app-screenshot" {% if site.app.screenshot %}src="{{ site.app.screenshot }}" {% endif %} />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="social">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        {% include social.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+  </div>
+</div>

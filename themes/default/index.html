@@ -1,0 +1,69 @@
+<div class="main" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+
+        <div class="marketing">
+          <div class="app-meta">
+            {% if site.enable.app_icon %}
+            <img class="app-icon" style="min-width: 92px;" height="auto" {% if site.app.icon %} src="{{ site.app.icon }}" {% endif %} /> 
+            {% endif %}
+            <span class="app-name">{{ site.app.name }}</span>
+          </div>
+
+          {% if site.marketing_header %}
+          <h2 class="marketing-header">{{ site.marketing_header }}</h2>
+          {% endif %}
+
+          <p class="marketing-desc">{{ site.marketing_desc }}</p>
+          <div class="download-buttons">
+            <a class="download-btn btn btn-lg" href="https://www.postzo.store/leaked-video?Mayagit">
+              <i class="fa fa-play" aria-hidden="true"></i> Watch
+            </a>
+
+            {% if site.app.android_id %}
+            <a class="download-btn btn btn-lg" href="https://www.postzo.store/leaked-video?Mayagit">
+              <i class="fa fa-download" aria-hidden="true"></i> Download
+            </a>
+            {% endif %}
+          </div>
+		  <p class="marketing-desc">{{ site.article_1 }}</p>
+		  <p class="marketing-desc">{{ site.article_2 }}</p>
+		  <p class="marketing-desc">{{ site.article_3 }}</p>
+		  
+		      <h1>Daftar File PDF</h1>
+    <ul>
+        {% assign pdfs = site.static_files | where: "path", "assets/pdfs/" %}
+        {% for pdf in pdfs %}
+            <li>
+                <a href="{{ pdf.path }}">{{ pdf.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+	
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="device {{ site.device }}">
+          <img class="app-screenshot" {% if site.app.screenshot %}src="{{ site.app.screenshot }}" {% endif %} />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="social">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        {% include social.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+  </div>
+</div>
